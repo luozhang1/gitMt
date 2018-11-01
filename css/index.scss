@@ -1,0 +1,201 @@
+// 一般情况下 maring padding 加px 
+//  具体看效果来决定 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img{
+  display: block;
+  width: 100%;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+ul{
+  list-style: none;
+}
+.clearfix::after{
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
+
+body{
+  // 为了看起来顺眼 不做这个设置 字体默认是继承根标签 字体很大
+  font-size: 16px;
+}
+
+
+.view{
+  padding: 0 .26rem;
+}
+
+
+.box{
+  margin-top:.25rem;
+ 
+  .box_title{
+    display: flex;
+    justify-content: space-between;
+    font-size: .28rem;
+    line-height: 1;
+    span:nth-child(1){
+      color: #000;
+    }
+    span:nth-child(2){
+      color: #888888;
+    }
+  }
+  .box_content{
+    box-shadow: 0 0 12px 4px #ccc;
+    border-radius: 10px;
+    margin-top:.25rem;
+    overflow: hidden;
+    .box_main{
+      background-color: #55bc75;
+      padding: 0 .31rem;
+      position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        top: -.2rem;
+        right: -.06rem;
+        background-image: url("../images/sale.png");
+        background-size: 1.46rem 1.46rem;
+        width: 1.46rem;
+        height: 1.46rem;
+      }
+      .bm_name1{
+        color: #fff;
+        font-size: .46rem;
+        padding-top: .34rem;
+        line-height: 1;
+      }
+      .bm_name2{
+        font-size: 0.24rem;
+        color: #bdf3ce;
+        padding-top: .17rem;
+      }
+      .bm_name3{
+        font-size: .22rem;
+        color: #fff;
+        padding-top: .6rem;
+        padding-bottom: .34rem;
+        a{
+          color: #bdf3ce;
+          background-color: #2a603b;
+          border-radius: 4px;
+          padding: .01rem .02rem;
+          float: right;
+        }
+      }
+    }
+    .box_tool{
+      padding: .14rem 0;
+      display: flex;
+      position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        top: -.08rem;
+        left: 0;
+        width: 100%;
+        height: .08rem;
+        background-image: url("../images/icon.png");
+        background-size: .24rem .08rem;
+      }
+      a{
+        flex: 1;
+        text-align: center;
+
+        font-size: .26rem;
+        color: #888888;
+        border-left: 1px solid #000;
+        span{
+          color: #55bc75;
+          vertical-align: middle;
+        }
+      }
+      a:nth-child(1){
+        border-left: none;
+      }
+    }
+  }
+}
+
+// 优惠券 紫色
+.coupon{
+  // 么有工具栏
+  .box_content{
+    .box_main{
+      background-color: #a974bc;
+      .bm_name1{
+        color: #fff;
+        // 字体是看系统里面有没有的！！！
+        font-family: STXihei;
+        .rmb{
+          font-size: 0.4rem;
+        }
+        .big_num{
+          font-size: 0.9rem;
+        }
+        .num_des{
+          font-size: 0.24rem;
+          color: #eac7f7;
+        }
+      }
+      .bm_name2{
+        color: #fff;
+        font-size: .22rem;
+        padding-top: .55rem;
+      }
+      .bm_name3{
+        padding-top: .12rem;
+        padding-bottom: .23rem;
+        a{
+          color: #f2d8fb;
+          background-color: #6a4279;
+        }
+      }
+    }
+  }
+  // 有工具栏
+  .own_tool{
+    .box_main{}
+    .box_tool{
+
+      a{
+        span{
+          color: #a974bc;
+        }
+      }
+    }
+  }
+}
+
+
+
+// 添加优惠券
+.add_coupon{
+  text-align: center;
+  margin-top: .27rem;
+  border: 3px dashed currentColor;
+  color: #aeaeae;
+  padding-top: .42rem;
+  padding-bottom: .40rem;
+  .icon-add{
+    font-size: 1rem;
+  }
+  p{
+    padding-top: .16rem;
+    font-size: .26rem;
+  }
+}
